@@ -2571,7 +2571,8 @@ body, .ionic-body {
   text-rendering: optimizeLegibility;
   -webkit-backface-visibility: hidden;
   -webkit-user-drag: none;
-  -ms-content-zooming: none; }
+  -ms-content-zooming: none;
+  direction:rtl}
 
 body.grade-b, body.grade-c {
   text-rendering: auto; }
