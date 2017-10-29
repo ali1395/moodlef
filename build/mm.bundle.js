@@ -3920,7 +3920,7 @@ angular.module('mm.core')
     });
     $translatePartialLoaderProvider.addPart('build/lang');
     var lang = mmCoreConfigConstants.default_lang || 'en';
-    $translateProvider.fallbackLanguage('en'); 
+    $translateProvider.fallbackLanguage('en');
     $translateProvider.preferredLanguage(lang);
 }])
 .config(["$provide", function($provide) {
@@ -4872,7 +4872,7 @@ angular.module('mm.core')
             if (!service) {
                 return $q.when({code: 0});
             }
-            return $http.post(siteurl + '/local/mobile/check.php', {service: service}).then(function(response) {
+            return $http.post('http://pishtazlms.ir/local/mobile/check.php', {service: service}).then(function(response) {
                 var data = response.data;
                 if (typeof data != 'undefined' && data.errorcode === 'requirecorrectaccess') {
                     if (!retrying) {
@@ -11570,9 +11570,20 @@ angular.module('mm.core.login', [])
         }]
     })
     .state('mm_login.site', {
-        url: '/site',
-        templateUrl: 'core/components/login/templates/site.html',
-        controller: 'mmLoginSiteCtrl'
+        url: '/cred',
+        templateUrl: 'core/components/login/templates/credentials.html',
+        controller: 'mmLoginCredentialsCtrl',
+        params: {
+            siteurl: 'http://pishtazlms.ir',
+            username: '',
+            urltoopen: '',
+            siteconfig: null
+        },
+        onEnter: ["$state", "$stateParams", function($state, $stateParams) {
+            if (!$stateParams.siteurl) {
+                $state.go('mm_login.init');
+            }
+        }]
     })
     .state('mm_login.credentials', {
         url: '/cred',
