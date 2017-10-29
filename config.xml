@@ -5,14 +5,14 @@
         id        = "com.moodle.moodlemobile"
         versionCode = "40200"
         version   = "4.3.2">
-    <name>Moodle Mobile</name>
+    <name>خانه ریاضی</name>
 
     <description>
-        Moodle Mobile official app
-    </description>
+موسسه آموزشی خانه ریاضی
+        </description>
 
     <author href="http://moodle.com" email="mobile@moodle.com">
-        Moodle Mobile team
+       تیم برنامه نویسی فرا استاد
     </author>
 
     <gap:config-file platform="ios" parent="CFBundleShortVersionString">
