@@ -17247,6 +17247,7 @@ angular.module('mm.core.emulator')
     }
     function getNotifications(ids, getScheduled, getTriggered) {
         var notifications = [];
+        notifications.push("sssssssssssssssssssssssssss");
         if (getScheduled) {
             angular.forEach(scheduled, function(entry, id) {
                 if (!ids || ids.indexOf(id) != -1) {
