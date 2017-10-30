@@ -15945,9 +15945,7 @@ angular.module('mm.core.courses')
 });
 
 angular.module('mm.core.courses')
-.factory('$mmCoursesHandlers', ["$mmSite", "$state", "$mmCourses", "$q", "$mmUtil", "$translate",
-    "$timeout", "$mmCourse", "$mmSitesManager", "mmCoursesEnrolInvalidKey", "$mmContentLinkHandlerFactory", "$mmAddonManager",
-    function($mmSite, $state, $mmCourses, $q, $mmUtil, $translate, $timeout, $mmCourse, $mmSitesManager,
+.factory('$mmCoursesHandlers', ["$mmSite", "$state", "$mmCourses", "$q", "$mmUtil", "$translate", "$timeout", "$mmCourse", "$mmSitesManager", "mmCoursesEnrolInvalidKey", "$mmContentLinkHandlerFactory", "$mmAddonManager", function($mmSite, $state, $mmCourses, $q, $mmUtil, $translate, $timeout, $mmCourse, $mmSitesManager,
             mmCoursesEnrolInvalidKey, $mmContentLinkHandlerFactory, $mmAddonManager) {
     var self = {};
     self.coursesLinksHandler = $mmContentLinkHandlerFactory.createChild(
@@ -16126,7 +16124,7 @@ angular.module('mm.core.courses')
             return function($scope) {
                 $scope.icon = 'ion-ionic';
                 $scope.title = 'mm.courses.mycourses';
-                $scope.state = 'site.mm_coursescategories';
+                $scope.state = 'site.mm_courses';
                 $scope.class = 'mm-mycourses-handler';
             };
         };
@@ -17249,7 +17247,6 @@ angular.module('mm.core.emulator')
     }
     function getNotifications(ids, getScheduled, getTriggered) {
         var notifications = [];
-
         if (getScheduled) {
             angular.forEach(scheduled, function(entry, id) {
                 if (!ids || ids.indexOf(id) != -1) {
@@ -20192,7 +20189,7 @@ angular.module('mm.core.login')
                 } else if (myOverview) {
                     return $state.go('site.myoverview');
                 } else if (myCourses) {
-                    return $state.go('site.mm_courses');
+                    return $state.go('site.mm_coursescategories');
                 } else {
                     return $state.go(mmUserProfileState, {userid: $mmSite.getUserId()});
                 }
