@@ -20189,6 +20189,7 @@ angular.module('mm.core.login')
                 } else if (myOverview) {
                     return $state.go('site.myoverview');
                 } else if (myCourses) {
+                    stateParams.categoryid = parseInt(4, 10);
                     return $state.go('site.mm_coursescategories');
                 } else {
                     return $state.go(mmUserProfileState, {userid: $mmSite.getUserId()});
