@@ -15945,7 +15945,9 @@ angular.module('mm.core.courses')
 });
 
 angular.module('mm.core.courses')
-.factory('$mmCoursesHandlers', ["$mmSite", "$state", "$mmCourses", "$q", "$mmUtil", "$translate", "$timeout", "$mmCourse", "$mmSitesManager", "mmCoursesEnrolInvalidKey", "$mmContentLinkHandlerFactory", "$mmAddonManager", function($mmSite, $state, $mmCourses, $q, $mmUtil, $translate, $timeout, $mmCourse, $mmSitesManager,
+.factory('$mmCoursesHandlers', ["$mmSite", "$state", "$mmCourses", "$q", "$mmUtil", "$translate",
+    "$timeout", "$mmCourse", "$mmSitesManager", "mmCoursesEnrolInvalidKey", "$mmContentLinkHandlerFactory", "$mmAddonManager",
+    function($mmSite, $state, $mmCourses, $q, $mmUtil, $translate, $timeout, $mmCourse, $mmSitesManager,
             mmCoursesEnrolInvalidKey, $mmContentLinkHandlerFactory, $mmAddonManager) {
     var self = {};
     self.coursesLinksHandler = $mmContentLinkHandlerFactory.createChild(
@@ -16124,7 +16126,7 @@ angular.module('mm.core.courses')
             return function($scope) {
                 $scope.icon = 'ion-ionic';
                 $scope.title = 'mm.courses.mycourses';
-                $scope.state = 'site.mm_courses';
+                $scope.state = 'site.mm_coursescategories';
                 $scope.class = 'mm-mycourses-handler';
             };
         };
@@ -17247,7 +17249,7 @@ angular.module('mm.core.emulator')
     }
     function getNotifications(ids, getScheduled, getTriggered) {
         var notifications = [];
-        notifications.push("sssssssssssssssssssssssssss");
+
         if (getScheduled) {
             angular.forEach(scheduled, function(entry, id) {
                 if (!ids || ids.indexOf(id) != -1) {
