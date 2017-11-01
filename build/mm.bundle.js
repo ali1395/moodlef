@@ -15945,7 +15945,7 @@ angular.module('mm.core.courses')
     self.coursesLinksHandler.getActions = function(siteIds, url, params, courseId) {
         return [{
             action: function(siteId) {
-                var state = 'site.mm_courses', 
+                var state = 'site.mm_coursescategories', 
                     stateParams = {};
                 if ($mmCourses.isGetCoursesByFieldAvailable()) {
                     if (params.categoryid && $mmCourses.isGetCategoriesAvailable()) {
