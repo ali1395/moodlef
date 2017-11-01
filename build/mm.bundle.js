@@ -11392,11 +11392,14 @@ angular.module('mm.core.courses', ['mm.core.contentlinks', 'mm.core.sidemenu'])
 .config(["$stateProvider", function($stateProvider) {
     $stateProvider
     .state('site.mm_courses', {
-        url: '/mm_courses',
+       url: '/mm_coursescategories',
+        params: {
+            categoryid: null
+        },
         views: {
             'site': {
-                templateUrl: 'core/components/courses/templates/list.html',
-                controller: 'mmCoursesListCtrl'
+                templateUrl: 'core/components/courses/templates/coursecategories.html',
+                controller: 'mmCourseCategoriesCtrl'
             }
         }
     })
