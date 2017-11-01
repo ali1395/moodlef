@@ -11394,7 +11394,7 @@ angular.module('mm.core.courses', ['mm.core.contentlinks', 'mm.core.sidemenu'])
     .state('site.mm_courses', {
        url: '/mm_coursescategories',
         params: {
-            categoryid: null
+            categoryid: 105
         },
         views: {
             'site': {
