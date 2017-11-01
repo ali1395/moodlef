@@ -15953,6 +15953,8 @@ angular.module('mm.core.courses')
                         stateParams.categoryid = parseInt(params.categoryid, 10);
                     } else {
                         state = 'site.mm_availablecourses';
+						 state = 'site.mm_coursescategories';
+                        stateParams.categoryid = parseInt(105, 10);
                     }
                 }
                 $state.go('redirect', {
